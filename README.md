@@ -46,7 +46,7 @@ git clone https://github.com/yourusername/todo-summary-assistant.git
 cd todo-summary-assistant
 
 ```
-## React Setup: 
+## 🚀 React Setup: 
 - Create the frontend with Vite + React \
 npm create vite@latest frontend -- --template react
 
@@ -87,7 +87,7 @@ export default {
 @tailwind components;  
 @tailwind utilities;  
 
-## Backend setup: 
+## 🚀 Backend setup: 
 
 - cd backend
 
@@ -122,7 +122,7 @@ npm install @supabase/supabase-js
 - Set up environment variables  
 .env.example
 
-## Connect Supabase Database
+## 🚀 Connect Supabase Database
 
 - Create a Supabase Project  
 Go to https://supabase.com
@@ -165,7 +165,7 @@ Go to https://supabase.com
 - Paste into the .env file
  
 ---
-## Slack Webhook Setup
+## 🚀 Slack Webhook Setup
 - Go to the Slack API page
 👉 https://api.slack.com/apps
 
@@ -203,7 +203,7 @@ Go to https://supabase.com
 - Add the key to .env as CO_API_KEY
 
 ---
-## Some Results: 
+## 🚀 Some Results: 
 
 ### Case 1: Todo List items
 
