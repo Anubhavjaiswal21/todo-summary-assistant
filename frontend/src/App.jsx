@@ -10,7 +10,8 @@ function App() {
   const [editingId, setEditingId] = useState(null);
   const [editText, setEditText] = useState('');
 
-const backendUrl = 'http://localhost:4000';
+/* global process */
+const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:4000';
 
   useEffect(() => {
     fetch(`${backendUrl}/todos`)
@@ -20,7 +21,7 @@ const backendUrl = 'http://localhost:4000';
         console.error(err);
         setMessage('❌ Failed to load todos');
       });
-  }, []);
+  }, [backendUrl]);
 
   const addTodo = async () => {
     if (!input.trim()) return;
