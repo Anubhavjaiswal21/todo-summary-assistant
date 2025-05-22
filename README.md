@@ -107,7 +107,6 @@ npm install -D nodemon
   "dev": "nodemon index.js"
 }
 
----
 ## Installing Dependencies:
 ### Frontend 
 - npm install axios framer-motion lucide-react
@@ -115,7 +114,6 @@ npm install -D nodemon
 ### Backend 
 - npm install cohere-ai
 
----
 
 - Install Supabase Client  
 npm install @supabase/supabase-js
@@ -191,7 +189,10 @@ Go to https://supabase.com
 - Choose a channel (e.g., #todo-summaries) and click Allow
 
 - Copy the generated Webhook URL  
-(It will look like this: https://hooks.slack.com/services/TXXXXX/BXXXXX/XXXXXXXX
+(It will look like this: https://hooks.slack.com/services/TXXXXX/BXXXXX/XXXXXXXX)
+
+- Paste this into .env file as SLACK_WEBHOOK_URL=https://hooks.slack.com/services/TXXXXX/BXXXXX/XXXXXXXX
+
 
 ---
 ## 🧠 LLM Setup – Cohere
