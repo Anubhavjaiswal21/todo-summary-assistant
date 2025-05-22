@@ -57,7 +57,7 @@ function App() {
       });
       const result = await res.json();
       if (result.success) {
-        setMessage('✅ Summary sent to Slack!');
+        setMessage('Summary sent to Slack! ✅ ');
         setTimeout(() => setMessage(''), 3000);
       } else {
         setMessage(`⚠️ Failed: ${result.message || result.error || 'Unknown error'}`);
