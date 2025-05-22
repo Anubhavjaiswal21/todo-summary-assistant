@@ -1,6 +1,8 @@
-SUPABASE_URL=https://elcfycghigaeztolyzfn.supabase.co
-SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVsY2Z5Y2doaWdhZXp0b2x5emZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc4NTAzNDYsImV4cCI6MjA2MzQyNjM0Nn0.AIITyX8hV3j6-M28bC0tU-BYNXhnBpR0hyuPdX94isA
-PORT=4000
+const { createClient } = require('@supabase/supabase-js');
 
-CO_API_KEY=OsRBflYIZYSHBAM4ept4BW6SbQX3XhTR4G89hVqC
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/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
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_KEY
+);
+
+module.exports = supabase;
