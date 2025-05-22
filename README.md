@@ -107,6 +107,16 @@ npm install -D nodemon
   "dev": "nodemon index.js"
 }
 
+---
+## Installing Dependencies:
+### Frontend 
+- npm install axios framer-motion lucide-react
+
+### Backend 
+- npm install cohere-ai
+
+---
+
 - Install Supabase Client  
 npm install @supabase/supabase-js
 
@@ -158,16 +168,30 @@ Go to https://supabase.com
  
 ---
 ## Slack Webhook Setup
-- Go to Slack API: Your Apps
+- Go to the Slack API page
+👉 https://api.slack.com/apps
 
-- Create a new app or choose an existing one
+- Click “Create New App”
 
-- Go to Incoming Webhooks → Activate → Add New Webhook
+- Give your app a name (e.g., Todo Assistant)
 
-- Choose a channel (e.g., #todo-summary)
-- Copy the generated Webhook URL and paste it into your .env
-- Slack Webhook URL : 
-- 📌 Note: The app must be added to the selected Slack channel.
+- Pick the Slack workspace you want it in
+
+- Click Create App
+
+- On the left sidebar, click "Incoming Webhooks"
+
+- On the right side, toggle the switch to “On”  
+✅ This is what “Activate Incoming Webhooks” means
+
+- Scroll down to "Webhook URLs for Your Workspace"
+
+- Click “Add New Webhook to Workspace”
+
+- Choose a channel (e.g., #todo-summaries) and click Allow
+
+- Copy the generated Webhook URL  
+(It will look like this: https://hooks.slack.com/services/TXXXXX/BXXXXX/XXXXXXXX
 
 ---
 ## 🧠 LLM Setup – Cohere
@@ -178,7 +202,7 @@ Go to https://supabase.com
 - Add the key to .env as CO_API_KEY
 
 ---
-## Some results: 
+## Some Results: 
 
 ### Case 1: Todo List items
 
