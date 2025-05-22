@@ -10,7 +10,7 @@ function App() {
   const [editingId, setEditingId] = useState(null);
   const [editText, setEditText] = useState('');
 
-  const backendUrl = 'http://localhost:4000';
+const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:4000';
 
   useEffect(() => {
     fetch(`${backendUrl}/todos`)
