@@ -19,7 +19,13 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY
 console.log("CO_API_KEY:", process.env.CO_API_KEY ? "✅ Found" : "❌ Not Found");
 const cohere = new CohereClient({ token: process.env.CO_API_KEY });
 
-// ➕ Add todo
+app.get('/',(req,res)=>{
+    res.send({
+        activeState:true,
+        error:false,
+    })
+})
+// Add todo
 app.post("/todos", async (req, res) => {
   const { text } = req.body;
   const { data, error } = await supabase.from("todos").insert([{ text }]).select();
@@ -27,7 +33,7 @@ app.post("/todos", async (req, res) => {
   res.json(data[0]);
 });
 
-// 🗑️ Delete todo
+//  Delete todo
 app.delete("/todos/:id", async (req, res) => {
   const { id } = req.params;
   const { error } = await supabase.from("todos").delete().eq("id", id);
@@ -35,7 +41,7 @@ app.delete("/todos/:id", async (req, res) => {
   res.json({ success: true });
 });
 
-// 📝 Update todo  <--- NEW ROUTE ADDED
+//  Update todo 
 app.put("/todos/:id", async (req, res) => {
   const { id } = req.params;
   const { text } = req.body;
@@ -61,14 +67,14 @@ app.put("/todos/:id", async (req, res) => {
   res.json(data[0]);
 });
 
-// 📄 Get all todos
+//  Get all todos
 app.get("/todos", async (req, res) => {
   const { data, error } = await supabase.from("todos").select();
   if (error) return res.status(500).json({ error });
   res.json(data);
 });
 
-// 🤖 Summarize todos using Cohere and send to Slack
+//  Summarize todos using Cohere and send to Slack
 app.post("/summarize", async (req, res) => {
   try {
     // Fetch all todos from DB
@@ -116,5 +122,5 @@ app.post("/summarize", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`✅ Backend running on http://localhost:${port}`);
+  console.log(`Backend running on http://localhost:${port}`);
 });
